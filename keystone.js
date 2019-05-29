@@ -15,4 +15,5 @@ keystone.init({
   	'auth': true,
 });
 
+keystone.import('models');
 keystone.start();
