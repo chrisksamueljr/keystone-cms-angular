@@ -29,4 +29,13 @@ var routes = {
 
 exports = module.exports = function (app) {
   app.get('/', routes.views.index)
+
+  // add a new route
+  app.get('/add-event', routes.view.addEvent);
+
+  // With this routing configured you should be able to start Keystone, 
+  // go to the new route, and fill out the Event form. 
+  // The next step will be to receive and process the data.
+
+
 };
