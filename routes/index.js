@@ -23,8 +23,11 @@ module.exports = function (app) {
 var keystone = require('keystone');
 var importRoutes = keystone.importer(__dirname);
 
+// We are going to add a new property to our routes object
+
 var routes = {
   views: importRoutes('./views'),
+  api: importRoutes('./api'),
 };
 
 exports = module.exports = function (app) {
@@ -37,5 +40,10 @@ exports = module.exports = function (app) {
   // go to the new route, and fill out the Event form. 
   // The next step will be to receive and process the data.
 
+  // we are going to add a new route to the application
+  // this is a post request
+  app.post('/api/event', routes.api.event.post);
+
+  // it is okay the the api folder only contains anoher folder.
 
 };
