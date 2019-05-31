@@ -40,5 +40,11 @@ Event.schema.pre('save', function (next) {
   return next();
 });
   
+
+
+
+
+
+  
 Event.defaultColumns = 'name, description';
 Event.register();
